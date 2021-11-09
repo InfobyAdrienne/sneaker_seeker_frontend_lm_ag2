@@ -1,0 +1,25 @@
+/* <div style="position: fixed; top: 0; width: 100%; z-index: 100">
+    <nav style="box-shadow: 1px 1px 4px rgb(0 0 0 / 10%)"> */
+    /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;1,200;1,400&display=swap"); */
+    
+  /* * {
+      font-family: "Montserrat", sans-serif;
+    }
+ */
+
+ .title {
+   margin-top: 3em;
+   margin-bottom: 1em;
+ }
+
+ .buttons-class {
+  margin-top: 2em;
+  margin-bottom: 1em;
+ }
+
+/* .page-container {
+  margin: 6em;
+  max-width: 600px !important;
+  align-items: center;
+  justify-content: center;
+} */
