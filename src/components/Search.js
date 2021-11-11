@@ -1,8 +1,21 @@
 import React, { useState } from "react";
-import { Container, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
+import Popup from "./Popup";
+// import Cards from "./Cards";
+import './Card.css';
 
 function Search() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [openSneaker, setOpenSneaker] = useState(false);
+
+  const togglePopup = (id) => {
+    setOpenSneaker(id);
+    setIsOpen(!isOpen);
+  };
+
   const [sneakers, setSneakers] = useState([]);
   const [data, setData] = useState({
     brand: "",
@@ -10,30 +23,22 @@ function Search() {
     colorway: "",
   });
 
-  let baseUrl = `https://sneaker-seaker-backend.herokuapp.com/api`
+  let baseUrl = `https://sneaker-seaker-backend.herokuapp.com/api`;
 
-  let query = []
+  let query = [];
 
   if (data.brand !== "") {
-    query.push( `brand=${data.brand}` )
+    query.push(`brand=${data.brand}`);
   }
   if (data.gender !== "") {
-    query.push( `gender=${data.gender}` )
+    query.push(`gender=${data.gender}`);
   }
   if (data.colorway !== "") {
-    query.push( `colorway=${data.colorway}` )
+    query.push(`colorway=${data.colorway}`);
   }
-  let queryString = query.join("&")
-  console.log(query)
-  console.log(queryString)
+  let queryString = query.join("&");
 
-  let url = (queryString.length === 0 ) ? baseUrl : `${baseUrl}?${queryString}`
-
-  
-  
-  console.log(url)
-
-
+  let url = queryString.length === 0 ? baseUrl : `${baseUrl}?${queryString}`;
 
   const fetchData = async (e) => {
     e.preventDefault();
@@ -55,111 +60,139 @@ function Search() {
   }
 
   return (
-    <div>
-      <div style={{ margin: "50px" }}>
-        <h1>Find your perfect Sneaker</h1>
-        <h6> Search to generate matches</h6>
-      </div>
+    <body>
       <div>
-        <Container>
-          <Form>
-            <Col style={{ marginTop: "0px", maxWidth: "50%", float: "right" }}>
-              <img src="trainers.jpg" alt="Trainers" />
-            </Col>
+        <div>
+          <Container className="container">
+            <Row>
+              <Form className="container auto">
+              <Col className="column">
+                  <form >
+                    <div>
+                      <h3>SELECT YOUR STYLE</h3>
+                    </div>
+                    <div className="dropdown-brand">
+                      <Form.Select
+                        className="custom-select form-select-lg"
+                        onChange={(e) => handle(e)}
+                        id="brand"
+                        value={data.brand}
+                      >
+                        <option hidden value="">
+                          Brand
+                        </option>
+                        <option value="NIKE">Nike</option>
+                        <option value="JORDAN">Jordan</option>
+                        <option value="CONVERSE">Converse</option>
+                        <option value="ADIDAS">Adidas</option>
+                        <option value="VANS">Vans</option>
+                        <option value="PUMA">Puma</option>
+                        <option value="REEBOK">Reebok</option>
+                        <option value="NEW%20BALANCE">New Balance</option>
+                        <option value="SAUCONY">Saucony</option>
+                        <option value="ASICS">Asics</option>
+                        <option value="AIR%20JORDAN">Under Armour</option>
+                      </Form.Select>
+                    </div>
+                    <div className="dropdown">
+                      <Form.Select
+                        className="custom-select form-select-lg"
+                        onChange={(e) => handle(e)}
+                        id="gender"
+                        value={data.gender}
+                      >
+                        <option hidden value="">
+                          Category
+                        </option>
+                        <option value="MEN">Men</option>
+                        <option value="WOMEN">Women</option>
+                        <option value="UNISEX">Unisex</option>
+                        <option value="CHILD">Junior</option>
+                      </Form.Select>
+                    </div>
 
-            <Col style={{ maxWidth: "50%", float: "left", margin: "50px" }}>
-              <form>
-                <div className="container p-5">
-                  <Form.Select
-                    className="custom-select"
-                    onChange={(e) => handle(e)}
-                    id="brand"
-                    value={data.brand}
-                  >
-                    <option hidden value="">
-                      Brand
-                    </option>
-                    <option value="NIKE">Nike</option>
-                    <option value="JORDAN">Jordan</option>
-                    <option value="CONVERSE">Converse</option>
-                    <option value="ADIDAS">Adidas</option>
-                    <option value="VANS">Vans</option>
-                    <option value="PUMA">Puma</option>
-                    <option value="REEBOK">Reebok</option>
-                    <option value="NEW%20BALANCE">New Balance</option>
-                    <option value="SAUCONY">Saucony</option>
-                    <option value="ASICS">Asics</option>
-                    <option value="AIR%20JORDAN">Under Armour</option>
-                  </Form.Select>
-                </div>
+                    <div className="dropdown-colour">
+                      <Form.Select
+                        className="custom-select form-select-lg"
+                        onChange={(e) => handle(e)}
+                        id="colorway"
+                        value={data.colorway}
+                      >
+                        <option hidden value="">
+                          Colour
+                        </option>
+                        <option value="RED">Red</option>
+                        <option value="BLACK">Black</option>
+                        <option value="BLUE">Blue</option>
+                        <option value="PURPLE">Purple</option>
+                        <option value="ORANGE">Orange</option>
+                        <option value="GREEN">Green</option>
+                        <option value="YELLOW">Yellow</option>
+                        <option value="PINK">Pink</option>
+                        <option value="WHITE">White</option>
+                        <option value="BROWN">Brown</option>
+                        <option value="GREY">Grey</option>
+                      </Form.Select>
+                      <div className="apply-button">
+                        <Button
+                          className="form-btn"
+                          variant="outline-success btn-lg"
+                          type="Submit"
+                          value="Submit"
+                          onClick={(e) => fetchData(e)}
+                        >APPLY
+                      </Button>
+                    </div>
+                    </div>
 
-                <div className="container p-5">
-                  <Form.Select
-                    className="custom-select"
-                    onChange={(e) => handle(e)}
-                    id="gender"
-                    value={data.gender}
-                  >
-                    <option hidden value="">
-                      Gender
-                    </option>
-                    <option value="MEN">Man</option>
-                    <option value="WOMEN">Women</option>
-                    <option value="CHILD">Child</option>
-                    <option value="INFANT">Infant</option>
-                    <option value="PRESCHOOL">Preschool</option>
-                    <option value="TODDLER">Toddler</option>
-                    <option value="UNISEX">Unisex</option>
-                  </Form.Select>
-                </div>
 
-                <div className="container p-5">
-                  <Form.Select
-                    className="custom-select"
-                    onChange={(e) => handle(e)}
-                    id="colorway"
-                    value={data.colorway}
-                  >
-                    <option hidden value="">
-                      Colour
-                    </option>
-                    <option value="RED">Red</option>
-                    <option value="BLACK">Black</option>
-                    <option value="BLUE">Blue</option>
-                    <option value="PURPLE">Purple</option>
-                    <option value="ORANGE">Orange</option>
-                    <option value="GREEN">Green</option>
-                    <option value="YELLOW">Yellow</option>
-                    <option value="PINK">Pink</option>
-                    <option value="WHITE">White</option>
-                    <option value="BROWN">Brown</option>
-                    <option value="GREY">Grey</option>
-                  </Form.Select>
-                </div>
+                  </form>
+                </Col>
+              </Form>
+            </Row>
+          </Container>
+        </div>
 
-                <Button variant="primary" type="Submit" value="Submit" onClick={(e) => fetchData(e)}>
-                  Submit
-                </Button>
-              </form>
-            </Col>
-          </Form>
-        </Container>
-      </div>
-
-      <div>
-        <ul>
+        <div className='cards'>
+        <div className="cards__container">
+            <div className="cards__wrapper">
           {sneakers.map((sneaker) => (
-            <li key={sneaker.id}>
-              <li>{sneaker.shoe}</li>
-              <li> Retail price: £{sneaker.retailPrice}</li>
-              <img src={sneaker.media.smallImageUrl} alt="sneaker" />
-            </li>
+            <p key={sneaker.id} {...sneaker}>
+              
+              <button className="shoe_button"
+                onClick={() => {
+                  console.log(sneaker.id);
+                  togglePopup(sneaker.id);
+                }}>
+                <img src={sneaker.media.thumbUrl} alt="sneaker" /><br></br>
+                <b>{sneaker.shoe} </b>
+                <p> Retail price: £{sneaker.retailPrice}</p>
+              </button>
+              
+              {isOpen && openSneaker === sneaker.id && (
+                <Popup
+                  content={
+                    <>
+                      <p>
+                        <b>Information</b>
+                      </p>
+                      <p>Sneaker: {sneaker.shoe}</p>
+                      <p>Brand: {sneaker.brand}</p>
+                      <p>Colour: {sneaker.colorway}</p>
+                      <p>Release Date: {sneaker.releaseDate}</p>
+                      <img src={sneaker.media.thumbUrl} alt="sneaker" />
+                    </>
+                  }
+                  handleClose={() => togglePopup(sneaker.id)}
+                />
+              )}
+            </p>
           ))}
-        </ul>
+        </div>
       </div>
-    </div>
+      </div>
+      </div>
+    </body>
   );
 }
 export default Search;
-
-// for the button style={{ float: "right", position: "relative" }} also need to redirect to results

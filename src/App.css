@@ -1,25 +1,141 @@
-/* <div style="position: fixed; top: 0; width: 100%; z-index: 100">
-    <nav style="box-shadow: 1px 1px 4px rgb(0 0 0 / 10%)"> */
-    /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;1,200;1,400&display=swap"); */
-    
-  /* * {
-      font-family: "Montserrat", sans-serif;
-    }
- */
+/* APP */
+.nav {
+  border-bottom: 2px solid green;
+  background-color: white;
+}
 
- .title {
-   margin-top: 3em;
-   margin-bottom: 1em;
- }
+.logo {
+  max-width: 20%;
+}
 
- .buttons-class {
-  margin-top: 2em;
-  margin-bottom: 1em;
- }
+h1 {
+  text-align: center;
+  padding-top: 50px;
+}
 
-/* .page-container {
-  margin: 6em;
-  max-width: 600px !important;
-  align-items: center;
+.button-align {
+  padding: 5px;
+  position: static;
   justify-content: center;
-} */
+  /* top: 50%; */
+  /* padding-left: 40%; */
+}
+
+.button-pad {
+  margin-left: 10px;
+  width: 270px;
+}
+
+/* col-md-7 mx-auto buttons-class */
+
+/* HOME */
+.carousel {
+  padding: 8rem;
+  height: 35rem;
+}
+
+.carousel-img {
+  display: block;
+  margin: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+/* SEARCH */
+.shoe_button {
+  background: white;
+  width: 100%;
+  border: 3px solid rgb(255, 255, 255);
+  /* box-shadow: 3px 3px 3px grey; */
+
+}
+
+.container {
+  margin-top: 60px;
+  max-width: 75%;
+}
+
+h3 {
+  text-align: center;
+  padding: 40px;
+  font-weight: bold;
+  color: rgb(82, 82, 82);
+
+}
+.dropdown-brand {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.dropdown {
+  padding-top: 50px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.dropdown-colour {
+  padding-top: 50px;
+  padding-left: 60px;
+  padding-right: 60px;
+  /* padding-bottom: 50px; */
+}
+.column {
+  width: 100%;
+  border-radius: 9px;
+  border: 2px solid rgb(28, 131, 8);
+  box-shadow: 10px 20px 15px rgb(211, 218, 213);
+  height: 100%;
+}
+
+.custom-select {
+  height: 55px;
+}
+
+.form-btn {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.apply-button {
+  padding: 70px;
+  position: static;
+  top: 50%;
+  padding-left: 40%;
+}
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  text-align: center;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  
+}
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 9px;
+  border: 2px solid rgb(28, 131, 8);
+}
+
+
+.close-icon {
+  border-radius: 9px;
+  border: 2px solid rgb(28, 131, 8);
+}
+
+.buttons-class {
+  margin-top: 16px;
+}
