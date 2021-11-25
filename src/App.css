@@ -5,7 +5,11 @@
 }
 
 .logo {
-  max-width: 20%;
+  width: 150px;
+}
+
+.search-link {
+  color:rgb(28, 131, 8)
 }
 
 h1 {
