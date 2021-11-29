@@ -17,22 +17,23 @@ h1 {
   padding-top: 50px;
 }
 
+/* HOMEPAGE BUTTONS */
+
 .button-align {
+  display: contents;
   padding: 5px;
   position: static;
   justify-content: center;
-  /* top: 50%; */
-  /* padding-left: 40%; */
 }
 
 .button-pad {
-  margin-left: 10px;
-  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 200px;
 }
 
-/* col-md-7 mx-auto buttons-class */
-
-/* HOME */
+/* HOME CAROUSEL*/
 .carousel {
   padding: 8rem;
   height: 35rem;
@@ -142,4 +143,18 @@ h3 {
 
 .buttons-class {
   margin-top: 16px;
+}
+
+/* ADJUSTING TO SIZE */
+
+@media (min-width: 533px) { 
+  .button-align {
+    display: flex;
+  }
+  .button-pad {
+    margin-left: 10px;
+    /* margin-right: auto; */
+    margin-top: 20px;
+    width: 200px;
+  }
 }
