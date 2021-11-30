@@ -181,7 +181,7 @@ function Search() {
                           <p>Brand: {sneaker.brand}</p>
                           <p>Colour: {sneaker.colorway}</p>
                           <p>Release Date: {sneaker.releaseDate}</p>
-                          <img src={sneaker.media.thumbUrl} alt="sneaker" />
+                          <img className="popup-img" src={sneaker.media.thumbUrl} alt="sneaker" />
                         </>
                       }
                       handleClose={() => togglePopup(sneaker.id)}

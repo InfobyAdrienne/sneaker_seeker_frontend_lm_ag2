@@ -178,3 +178,10 @@ h3 {
     padding-top: 40px;
   }
 }
+
+@media (max-width: 470px) {
+  .popup-img {
+    width: 90%;
+    height: auto;
+  }
+}
