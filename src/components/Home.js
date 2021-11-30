@@ -52,15 +52,16 @@ const Home = (props) => {
           <Stack
             gap={2}
             direction="horizontal"
-            className="col-md-7 mx-auto buttons-class button-align"
+            className="col-xs-7 mx-auto buttons-class button-align"
           >
             <div class="button-align">
-              <Button href="/search" variant="outline-success btn-lg" className="button-pad">
+              <Button href="/search" variant="outline-success" className="button-pad">
                 I KNOW WHAT I WANT
-              </Button>
+              </Button>{' '}
+              
               <Button
                 onClick={() => window.open(randomItem) }
-                variant="outline-success btn-lg"
+                variant="outline-success"
                 className="button-pad"
               >
                 INSPIRE ME
