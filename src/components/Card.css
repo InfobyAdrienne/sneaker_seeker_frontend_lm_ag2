@@ -14,15 +14,8 @@ h1 {
 }
 
 .cards__container {
-  /* flex-flow: column; */
-  /* max-width: 1120px;
-  margin: 0 auto; */
-  /* align-items: center; */
-  /* width: 80%; */
   justify-content: center;
   display: flex;
-  /* grid-template-columns: 1fr min(124ch, calc(100% - 48px)) 1fr;
-  grid-template-rows: 60px 0 auto; */
   gap: 16px 24px;
 }
 
