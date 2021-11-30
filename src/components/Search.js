@@ -3,8 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import Popup from "./Popup";
-// import Cards from "./Cards";
-import "./Card.css";
+import "../Card.css";
 
 function Search() {
   const [isOpen, setIsOpen] = useState(false);
