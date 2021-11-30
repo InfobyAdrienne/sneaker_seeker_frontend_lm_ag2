@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import Popup from "./Popup";
 // import Cards from "./Cards";
-import './Card.css';
+import "./Card.css";
 
 function Search() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,8 +66,8 @@ function Search() {
           <Container className="container">
             <Row>
               <Form className="container auto">
-              <Col className="column">
-                  <form >
+                <Col className="column">
+                  <form>
                     <div>
                       <h3>SELECT YOUR STYLE</h3>
                     </div>
@@ -140,12 +140,11 @@ function Search() {
                           type="Submit"
                           value="Submit"
                           onClick={(e) => fetchData(e)}
-                        >APPLY
-                      </Button>
+                        >
+                          APPLY
+                        </Button>
+                      </div>
                     </div>
-                    </div>
-
-
                   </form>
                 </Col>
               </Form>
@@ -153,44 +152,46 @@ function Search() {
           </Container>
         </div>
 
-        <div className='cards'>
-        <div className="cards__container">
+        <div className="cards">
+          <div className="cards__container">
             <div className="cards__wrapper">
-          {sneakers.map((sneaker) => (
-            <p key={sneaker.id} {...sneaker}>
-              
-              <button className="shoe_button"
-                onClick={() => {
-                  console.log(sneaker.id);
-                  togglePopup(sneaker.id);
-                }}>
-                <img src={sneaker.media.thumbUrl} alt="sneaker" /><br></br>
-                <b>{sneaker.shoe} </b>
-                <p> Retail price: £{sneaker.retailPrice}</p>
-              </button>
-              
-              {isOpen && openSneaker === sneaker.id && (
-                <Popup
-                  content={
-                    <>
-                      <p>
-                        <b>Information</b>
-                      </p>
-                      <p>Sneaker: {sneaker.shoe}</p>
-                      <p>Brand: {sneaker.brand}</p>
-                      <p>Colour: {sneaker.colorway}</p>
-                      <p>Release Date: {sneaker.releaseDate}</p>
-                      <img src={sneaker.media.thumbUrl} alt="sneaker" />
-                    </>
-                  }
-                  handleClose={() => togglePopup(sneaker.id)}
-                />
-              )}
-            </p>
-          ))}
+              {sneakers.map((sneaker) => (
+                <p key={sneaker.id} {...sneaker}>
+                  <button
+                    className="shoe_button"
+                    onClick={() => {
+                      console.log(sneaker.id);
+                      togglePopup(sneaker.id);
+                    }}
+                  >
+                    <img src={sneaker.media.thumbUrl} alt="sneaker" />
+                    <br></br>
+                    <b>{sneaker.shoe} </b>
+                    <p> Retail price: £{sneaker.retailPrice}</p>
+                  </button>
+
+                  {isOpen && openSneaker === sneaker.id && (
+                    <Popup
+                      content={
+                        <>
+                          <p>
+                            <b>Information</b>
+                          </p>
+                          <p>Sneaker: {sneaker.shoe}</p>
+                          <p>Brand: {sneaker.brand}</p>
+                          <p>Colour: {sneaker.colorway}</p>
+                          <p>Release Date: {sneaker.releaseDate}</p>
+                          <img src={sneaker.media.thumbUrl} alt="sneaker" />
+                        </>
+                      }
+                      handleClose={() => togglePopup(sneaker.id)}
+                    />
+                  )}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
     </body>
   );

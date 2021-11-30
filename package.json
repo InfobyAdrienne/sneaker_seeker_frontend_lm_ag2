@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "engines":{
+  "engines": {
     "node": "16.13.0"
   },
   "proxy": "https://sneaker-seaker-backend.herokuapp.com/api",

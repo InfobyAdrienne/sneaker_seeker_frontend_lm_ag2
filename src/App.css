@@ -59,8 +59,9 @@ h1 {
 }
 
 .container {
-  margin-top: 60px;
-  max-width: 75%;
+  padding-top: 80px;
+  max-width: 95%;
+  width: 500px;
 }
 
 h3 {
@@ -104,10 +105,7 @@ h3 {
 }
 
 .apply-button {
-  padding: 70px;
-  position: static;
-  top: 50%;
-  padding-left: 40%;
+  padding: 50px 0;
 }
 
 /* Popup style */
