@@ -172,3 +172,9 @@ h3 {
     padding-top: 6rem;
   }
 }
+
+@media (max-height: 720px) {
+  .container {
+    padding-top: 40px;
+  }
+}
