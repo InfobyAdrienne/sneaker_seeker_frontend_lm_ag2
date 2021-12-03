@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Search from "./components/Search";
 import Home from "./components/Home";
-import DataFetching from "./components/DataFetching";
+// import DataFetching from "./components/DataFetching";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -32,7 +32,7 @@ export default function App() {
 
       <Routes>
         <Route path="/search" element={<Search />}></Route>
-        <Route path="/datafetching" element={<DataFetching />}></Route>
+        {/* <Route path="/datafetching" element={<DataFetching />}></Route> */}
         <Route path="/" element={<Home />}></Route>
       </Routes>
     </BrowserRouter>
