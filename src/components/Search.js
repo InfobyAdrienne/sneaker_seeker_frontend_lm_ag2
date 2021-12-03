@@ -22,6 +22,8 @@ function Search() {
     colorway: "",
   });
 
+  const [filteredData,setFilteredData] = useState(sneakers);
+
   let baseUrl = `https://sneaker-seaker-backend.herokuapp.com/api`;
 
   let query = [];
@@ -46,16 +48,27 @@ function Search() {
       const json = await response.json();
       console.log(json.results);
       setSneakers(json.results);
+      setFilteredData(json.results);
     } catch (error) {
       console.log(error);
     }
   };
 
   function handle(e) {
+
+    let result = [];
+
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
     setData(newdata);
     console.log(newdata);
+
+    result = sneakers.filter((data) => {
+      return data.colorway.search(newdata) !== -1;
+    });
+
+    setFilteredData(result);
+
   }
 
   return (
@@ -154,7 +167,7 @@ function Search() {
         <div className="cards">
           <div className="cards__container">
             <div className="cards__wrapper">
-              {sneakers.map((sneaker) => (
+              {filteredData.map((sneaker) => (
                 <p key={sneaker.id} {...sneaker}>
                   <button
                     className="shoe_button"
