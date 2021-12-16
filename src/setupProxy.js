@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://sneaker-seeker-backend-lm-ag2.herokuapp.com/api',
+      target: 'http://localhost:3000',
       changeOrigin: true,
     })
   );
