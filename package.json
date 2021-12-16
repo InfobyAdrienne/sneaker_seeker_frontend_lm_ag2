@@ -24,7 +24,6 @@
   "engines": {
     "node": "16.13.0"
   },
-  "proxy": "https://sneaker-seeker-backend-lm-ag2.herokuapp.com/api",
   "eslintConfig": {
     "extends": [
       "react-app",
