@@ -24,7 +24,7 @@ function Search() {
 
   const [filteredData,setFilteredData] = useState(sneakers);
 
-  let baseUrl = `https://sneaker-seaker-backend.herokuapp.com/api`;
+  let baseUrl = `https://sneaker-seeker-backend-lm-ag2.herokuapp.com/api`;
 
   let query = [];
 
